@@ -7,8 +7,8 @@ public class ArrayCreateByValueListExample {
 
 		// 배열 항목의 총합을 구하고 출력
 		int sum = 0;
-		for (int i = 0; i < scores.length; i++) {
-			sum += scores[i];
+		for (int score : scores) {
+			sum += score;
 		}
 
 		System.out.println("총합 : " + sum);
