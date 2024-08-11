@@ -1,4 +1,4 @@
-package Interface.Abstract;
+package Interface.implementsClass;
 
 public class Television implements RemoteController {
 	
