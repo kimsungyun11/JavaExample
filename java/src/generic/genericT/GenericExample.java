@@ -1,4 +1,4 @@
-package library.generic.genericT;
+package generic.genericT;
 
 public class GenericExample {
 
