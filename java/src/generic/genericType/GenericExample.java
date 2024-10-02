@@ -1,33 +1,30 @@
 package generic.genericType;
 
 public class GenericExample {
-
-	public static void main(String[] args) {
+	// 제한된 타입 파라미터를 갖는 제네릭 메소드
+	// 타입 파라미터 T를 대체할 타입을 number로 제한
+	public static <T extends Number> boolean compare (T  t1, T t2) {
+		// T의 타입을 출력
+		System.out.println( "compare ( " + t1.getClass().getSimpleName() + ", " + 
+							t2.getClass().getSimpleName() + ")" );
 		
-		// k는 tv로 대체, m은 String으로 대체
-		Product<Tv, String> product1 = new Product<>();
+		// number의 메소드 사용
+		double v1 = t1.doubleValue(); // number 타입의 doubleValue() 메소드 호출
+		double v2 = t2.doubleValue(); // number 타입의 doubleValue() 메소드 호출
 		
-		// setter 매개값은 반드시 tv와 string을 제공
-		product1.setKind(new Tv());
-		product1.setModel("스마트tv");
-		
-		// getter 리턴값은 tv와 string이 됨
-		Tv tv = product1.getKind();
-		String tvModel = product1.getModel();
-		
-		// K는 car로 대체, m은 String으로 대체
-		Product<Car, String> product2 = new Product<>();
-		
-		// setter 매개값은 반드시 car와 String을 제공
-		product2.setKind(new Car());
-		product2.setModel("suv자동차");
-		
-		// getter 리턴값은 car와 string이 됨
-		Car car = product2.getKind();
-		String carModel = product2.getModel();
-		
-		
-
+		return ( v1 ==  v2 );
 	}
-
+	
+	public static void main ( String[] args ) {
+		// 제네릭 메소드 호출
+		// t를 Integer 타입으로 대체
+		boolean result1 = compare(10, 20);
+		System.out.println( result1 );
+		System.out.println();
+		
+		// 제네릭 메소드 호출
+		// t를 double타입으로 대체
+		boolean result2 = compare(4.5, 4.5);
+		System.out.println( result2 );
+	}
 }
